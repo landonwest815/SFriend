@@ -14,6 +14,8 @@
 		91B9F81C2B6043ED00CDFD26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B9F81B2B6043ED00CDFD26 /* Preview Assets.xcassets */; };
 		91B9F8232B60595D00CDFD26 /* HouseInterior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8222B60595D00CDFD26 /* HouseInterior.swift */; };
 		91B9F8252B60599E00CDFD26 /* HouseExterior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8242B60599E00CDFD26 /* HouseExterior.swift */; };
+		91B9F8272B61602500CDFD26 /* MenuOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8262B61602500CDFD26 /* MenuOverlay.swift */; };
+		91B9F8292B6169D000CDFD26 /* MenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8282B6169D000CDFD26 /* MenuSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		91B9F81B2B6043ED00CDFD26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91B9F8222B60595D00CDFD26 /* HouseInterior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseInterior.swift; sourceTree = "<group>"; };
 		91B9F8242B60599E00CDFD26 /* HouseExterior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseExterior.swift; sourceTree = "<group>"; };
+		91B9F8262B61602500CDFD26 /* MenuOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOverlay.swift; sourceTree = "<group>"; };
+		91B9F8282B6169D000CDFD26 /* MenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				91B9F81A2B6043ED00CDFD26 /* Preview Content */,
 				91B9F8222B60595D00CDFD26 /* HouseInterior.swift */,
 				91B9F8242B60599E00CDFD26 /* HouseExterior.swift */,
+				91B9F8262B61602500CDFD26 /* MenuOverlay.swift */,
+				91B9F8282B6169D000CDFD26 /* MenuSheet.swift */,
 			);
 			path = SFriend;
 			sourceTree = "<group>";
@@ -146,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B9F8292B6169D000CDFD26 /* MenuSheet.swift in Sources */,
 				91B9F8152B6043EB00CDFD26 /* ContentView.swift in Sources */,
+				91B9F8272B61602500CDFD26 /* MenuOverlay.swift in Sources */,
 				91B9F8172B6043EB00CDFD26 /* Item.swift in Sources */,
 				91B9F8232B60595D00CDFD26 /* HouseInterior.swift in Sources */,
 				91B9F8252B60599E00CDFD26 /* HouseExterior.swift in Sources */,

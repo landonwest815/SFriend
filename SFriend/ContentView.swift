@@ -11,8 +11,12 @@ import SwiftData
 struct ContentView: View {
 
     var body: some View {
-        //HouseInterior()
-        HouseExterior()
+        ZStack {
+            //HouseInterior()
+            HouseExterior()
+            MenuOverlay()
+        }
+        .preferredColorScheme(.dark)
     }
 }
 

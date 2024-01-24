@@ -15,19 +15,33 @@ struct HouseExterior: View {
         NavigationView {
                 ScrollViewReader { value in
                     ScrollView(.horizontal, showsIndicators: false) {
-                        VStack {
+                        VStack(spacing:3) {
                             Spacer()
-                            HStack(alignment: .bottom, spacing: 50) {
+                            HStack(alignment: .bottom, spacing: 30) {
                                 Spacer()
                                 
-                                Image(systemName: "dog.fill")
+                                VStack {
+                                    Image(systemName: "graduationcap.fill")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                    
+                                    Button { }
+                                    label: {
+                                        Image(systemName: "bus.fill")
+                                            .resizable()
+                                            .frame(width: 100, height: 100)
+                                    }
+                                    .foregroundStyle(.white)
+                                }
+                                
+                                Image(systemName: "signpost.right.and.left.fill")
                                     .resizable()
                                     .frame(width: 90, height: 70)
                                 
                                 VStack(spacing: 150) {
-                                    Image(systemName: "sun.max.fill")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
+//                                    Image(systemName: "sun.max.fill")
+//                                        .resizable()
+//                                        .frame(width: 50, height: 50)
                                     
                                     NavigationLink(destination: HouseInterior())
                                         {
@@ -61,8 +75,6 @@ struct HouseExterior: View {
             
             }
         .preferredColorScheme(.dark)
-        
-            
         }
     }
 
