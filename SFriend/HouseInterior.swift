@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct HouseInterior: View {
+    
     @Environment(\.dismiss) var dismiss
+    @State private var showingSheet = false
+    @State private var bedMade = false
+    @State private var windowOpen = false
+    @State private var bedAlreadyMade = 0
+
     var body: some View {
         ZStack {
             ScrollViewReader { value in
@@ -32,22 +38,55 @@ struct HouseInterior: View {
                                 Image(systemName: "photo.artframe")
                                     .resizable()
                                     .frame(width: 75, height: 60)
-                                Image(systemName: "bed.double.fill")
-                                    .resizable()
-                                    .frame(width: 150, height: 100)
-                                    .id(1)
+                                Button {
+                                    if bedMade { bedAlreadyMade += 1 }
+                                    withAnimation {
+                                        bedMade = true
+                                    }
+                                }
+                                label: {
+                                    Image(systemName: bedMade ? "bed.double.fill": "bed.double")
+                                        .resizable()
+                                        .frame(width: 150, height: 100)
+                                        .id(1)
+                                        .foregroundStyle(.white)
+                                }
+                                .symbolEffect(.bounce.down, value: bedAlreadyMade)
+                                .contentTransition(.symbolEffect(.replace))
                             }
                             
                             VStack {
                                 Spacer()
                                 Spacer()
                                 HStack(spacing:30) {
-                                    Image(systemName: "window.casement")
-                                        .resizable()
-                                        .frame(width: 150, height: 100)
+                                    
+                                    Button {
+                                        withAnimation {
+                                            windowOpen.toggle()
+                                        }
+                                    }
+                                    label: {
+                                        Image(systemName: windowOpen ? "window.vertical.open": "window.vertical.closed")
+                                            .resizable()
+                                            .frame(width: 110, height: 100)
+                                            .foregroundStyle(.white)
+                                    }
+                                    .contentTransition(.symbolEffect(.replace.offUp))
+                                        
+                                    Button { showingSheet.toggle() }
+                                    label: {
                                     Image(systemName: "calendar")
                                         .resizable()
                                         .frame(width: 50, height: 50)
+                                        .foregroundStyle(.white)
+                                    }
+                                    .sheet(isPresented: $showingSheet) {
+                                        NavigationStack {
+                                            CalendarSheet()
+                                        }
+                                        .presentationDetents([.height(550)])
+                                        .presentationBackground(.black)
+                                    }
                                 }
                                 Spacer()
                             }

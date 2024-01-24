@@ -16,6 +16,7 @@
 		91B9F8252B60599E00CDFD26 /* HouseExterior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8242B60599E00CDFD26 /* HouseExterior.swift */; };
 		91B9F8272B61602500CDFD26 /* MenuOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8262B61602500CDFD26 /* MenuOverlay.swift */; };
 		91B9F8292B6169D000CDFD26 /* MenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8282B6169D000CDFD26 /* MenuSheet.swift */; };
+		91B9F82B2B61C6EF00CDFD26 /* CalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F82A2B61C6EF00CDFD26 /* CalendarSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		91B9F8242B60599E00CDFD26 /* HouseExterior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseExterior.swift; sourceTree = "<group>"; };
 		91B9F8262B61602500CDFD26 /* MenuOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOverlay.swift; sourceTree = "<group>"; };
 		91B9F8282B6169D000CDFD26 /* MenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSheet.swift; sourceTree = "<group>"; };
+		91B9F82A2B61C6EF00CDFD26 /* CalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				91B9F8242B60599E00CDFD26 /* HouseExterior.swift */,
 				91B9F8262B61602500CDFD26 /* MenuOverlay.swift */,
 				91B9F8282B6169D000CDFD26 /* MenuSheet.swift */,
+				91B9F82A2B61C6EF00CDFD26 /* CalendarSheet.swift */,
 			);
 			path = SFriend;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B9F8292B6169D000CDFD26 /* MenuSheet.swift in Sources */,
+				91B9F82B2B61C6EF00CDFD26 /* CalendarSheet.swift in Sources */,
 				91B9F8152B6043EB00CDFD26 /* ContentView.swift in Sources */,
 				91B9F8272B61602500CDFD26 /* MenuOverlay.swift in Sources */,
 				91B9F8172B6043EB00CDFD26 /* Item.swift in Sources */,

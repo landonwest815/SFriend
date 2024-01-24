@@ -8,61 +8,77 @@
 import SwiftUI
 
 struct MenuSheet: View {
-    var genders = ["Male", "Female", "Other"]
-    
-    @State private var name: String = "Landon"
-    @State private var gender = "Male"
-    @State private var age: Int = 20
-    @State private var isWorking: Bool = true
-    @State private var inSchool: Bool = true
 
     var body: some View {
         
-        List() {
-            Section(header: Text("Info")) {
-                TextField("Enter your name", text: $name)
-                    .font(.system(size: 20))
-                    .fontWeight(.heavy)
-                    .fontDesign(.rounded)
-                    .padding(6)
-            
-            
-            
-                Picker(gender, selection: $gender) {
-                    ForEach(genders, id: \.self) {
-                        Text($0)
-                    }
+        List {
+            Section {
+                
+                HStack {
+                    Spacer()
+                    Image(systemName: "house.fill")
+                        .resizable()
+                        .frame(width: 30, height: 25)
+                    Spacer()
                 }
-                .font(.system(size: 20))
-                .fontWeight(.heavy)
-                .fontDesign(.rounded)
-                .padding(6)
-            
-            
-            
-                Stepper("\(age) yrs", value: $age)
-                    .font(.system(size: 20))
-                    .fontWeight(.heavy)
-                    .fontDesign(.rounded)
-                    .padding(6)
+                .padding(.bottom, 30)
+                
+                HStack {
+                    Spacer()
+                    Text("Make your bed")
+                        .font(.system(size: 20))
+                        .fontWeight(.heavy)
+                        .fontDesign(.rounded)
+                        .padding(6)
+                    Spacer()
+                }
+                
+                HStack {
+                    Spacer()
+                    Text("Let some fresh air inside")
+                        .font(.system(size: 20))
+                        .fontWeight(.heavy)
+                        .fontDesign(.rounded)
+                        .padding(6)
+                    Spacer()
+                }
+                
+                HStack {
+                    Spacer()
+                    Text("Check in with the calendar")
+                        .font(.system(size: 20))
+                        .fontWeight(.heavy)
+                        .fontDesign(.rounded)
+                        .padding(6)
+                        .strikethrough()
+                        .foregroundStyle(.gray)
+                    Spacer()
+                }
+                
+                HStack {
+                    Spacer()
+                    Text("Set your goal for today")
+                        .font(.system(size: 20))
+                        .fontWeight(.heavy)
+                        .fontDesign(.rounded)
+                        .padding(6)
+                    Spacer()
+                }
+                
+                HStack {
+                    Spacer()
+                    Text("Write down the best part of your day")
+                        .font(.system(size: 20))
+                        .fontWeight(.heavy)
+                        .fontDesign(.rounded)
+                        .padding(6)
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                }
             }
             .listRowBackground(Color.black)
+            .listRowSeparator(.hidden)
             
-            Section(header: Text("Status")) {
-                Toggle("Employed", isOn: $isWorking)
-                    .font(.system(size: 20))
-                    .fontWeight(.heavy)
-                    .fontDesign(.rounded)
-                    .padding(6)
-            
-            
-                Toggle("Attending School", isOn: $inSchool)
-                    .font(.system(size: 20))
-                    .fontWeight(.heavy)
-                    .fontDesign(.rounded)
-                    .padding(6)
-            }
-            .listRowBackground(Color.black)
             
         }
         .scrollContentBackground(.hidden)

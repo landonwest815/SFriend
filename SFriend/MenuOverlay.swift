@@ -18,9 +18,9 @@ struct MenuOverlay: View {
                 VStack {
                     Button { showingSheet.toggle() }
                     label: {
-                        Image(systemName: "figure.stand")
+                        Image(systemName: "figure.wave")
                             .resizable()
-                            .frame(width: 40, height: 100)
+                            .frame(width: 37.5, height: 75)
                     }
                     .foregroundStyle(.white)
                     .sheet(isPresented: $showingSheet) {
@@ -33,7 +33,7 @@ struct MenuOverlay: View {
                     }
                     
                     Text("Landon")
-                        .font(.system(size: 25))
+                        .font(.system(size: 18))
                         .fontWeight(.heavy)
                         .fontDesign(.rounded)
                 }
