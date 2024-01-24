@@ -22,7 +22,7 @@ struct HouseExterior: View {
                                 
                                 Image(systemName: "dog.fill")
                                     .resizable()
-                                    .frame(width: 75, height: 60)
+                                    .frame(width: 90, height: 70)
                                 
                                 VStack(spacing: 150) {
                                     Image(systemName: "sun.max.fill")
