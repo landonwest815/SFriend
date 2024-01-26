@@ -10,6 +10,7 @@
 		915BEBBB2B642EF00084755F /* EducationInterior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBBA2B642EF00084755F /* EducationInterior.swift */; };
 		915BEBBD2B6435000084755F /* EducationExterior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBBC2B6435000084755F /* EducationExterior.swift */; };
 		915BEBBF2B6436900084755F /* BusSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBBE2B6436900084755F /* BusSheet.swift */; };
+		915BEBC52B6456770084755F /* SFElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBC42B6456770084755F /* SFElement.swift */; };
 		91B9F8132B6043EB00CDFD26 /* SFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8122B6043EB00CDFD26 /* SFriendApp.swift */; };
 		91B9F8152B6043EB00CDFD26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8142B6043EB00CDFD26 /* ContentView.swift */; };
 		91B9F8172B6043EB00CDFD26 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8162B6043EB00CDFD26 /* Item.swift */; };
@@ -26,6 +27,7 @@
 		915BEBBA2B642EF00084755F /* EducationInterior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationInterior.swift; sourceTree = "<group>"; };
 		915BEBBC2B6435000084755F /* EducationExterior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationExterior.swift; sourceTree = "<group>"; };
 		915BEBBE2B6436900084755F /* BusSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusSheet.swift; sourceTree = "<group>"; };
+		915BEBC42B6456770084755F /* SFElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFElement.swift; sourceTree = "<group>"; };
 		91B9F80F2B6043EB00CDFD26 /* SFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B9F8122B6043EB00CDFD26 /* SFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFriendApp.swift; sourceTree = "<group>"; };
 		91B9F8142B6043EB00CDFD26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				915BEBBA2B642EF00084755F /* EducationInterior.swift */,
 				915BEBBC2B6435000084755F /* EducationExterior.swift */,
 				915BEBBE2B6436900084755F /* BusSheet.swift */,
+				915BEBC42B6456770084755F /* SFElement.swift */,
 			);
 			path = SFriend;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				915BEBBD2B6435000084755F /* EducationExterior.swift in Sources */,
 				91B9F8232B60595D00CDFD26 /* HouseInterior.swift in Sources */,
 				91B9F8252B60599E00CDFD26 /* HouseExterior.swift in Sources */,
+				915BEBC52B6456770084755F /* SFElement.swift in Sources */,
 				915BEBBF2B6436900084755F /* BusSheet.swift in Sources */,
 				91B9F8132B6043EB00CDFD26 /* SFriendApp.swift in Sources */,
 			);

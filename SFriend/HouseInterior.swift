@@ -38,6 +38,7 @@ struct HouseInterior: View {
                                 Image(systemName: "photo.artframe")
                                     .resizable()
                                     .frame(width: 75, height: 60)
+                                    .opacity(0.5)
                                 Button {
                                     if bedMade { bedAlreadyMade += 1 }
                                     withAnimation {
