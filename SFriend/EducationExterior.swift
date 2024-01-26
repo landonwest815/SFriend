@@ -1,18 +1,18 @@
 //
-//  HouseExterior.swift
+//  EducationExterior.swift
 //  SFriend
 //
-//  Created by Landon West on 1/23/24.
+//  Created by Landon West on 1/26/24.
 //
 
 import SwiftUI
 
-struct HouseExterior: View {
-    @State private var isShowingInterior = false
-    @State private var showTravelOptions = false
+struct EducationExterior: View {
     
+    @Environment(\.dismiss) var dismiss
+    @State private var showTravelOptions = false
+
     var body: some View {
-            
         
         NavigationView {
                 ScrollViewReader { value in
@@ -40,27 +40,17 @@ struct HouseExterior: View {
                                         .frame(width:125)
                                         
                                         HStack(spacing:35) {
-                                            NavigationLink(destination: EducationExterior())
-                                            {
-                                                Image(systemName: "graduationcap.fill")
+                                            Button { dismiss() }
+                                            label: {
+                                                Image(systemName: "house.fill")
                                                     .resizable()
-                                                    .frame(width: 50, height: 50)
+                                                    .frame(width: 50, height: 40)
                                                     .foregroundStyle(.white)
                                                     .scaleEffect(showTravelOptions ? 1 : 0.5)
                                                                 .opacity(showTravelOptions ? 1 : 0)
                                                                 .transition(.opacity)
                                                                 .animation(.easeOut(duration: 0.25), value: showTravelOptions)
-                                                
                                             }
-                                            
-                                            Image(systemName: "suitcase.fill")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                                .padding(.bottom, 15)
-                                                .scaleEffect(showTravelOptions ? 1 : 0.5)
-                                                            .opacity(showTravelOptions ? 1 : 0)
-                                                            .transition(.opacity)
-                                                            .animation(.easeOut(duration: 0.25), value: showTravelOptions)
                                         }
                                     
                                     
@@ -84,9 +74,9 @@ struct HouseExterior: View {
 //                                        .resizable()
 //                                        .frame(width: 50, height: 50)
                                     
-                                    NavigationLink(destination: HouseInterior())
+                                    NavigationLink(destination: EducationInterior())
                                         {
-                                            Image(systemName: "house.fill")
+                                            Image(systemName: "building.columns.fill")
                                                 .resizable()
                                                 .frame(width: 175, height: 150)
 
@@ -110,32 +100,15 @@ struct HouseExterior: View {
                         .onAppear() {
                             value.scrollTo(1)
                         }
-                        
-                        
-                        
                     }
-                    .onTapGesture {
-                        showTravelOptions = false
-                    }
-                    
-                }
-                .onAppear() {
-                    showTravelOptions = false
-                }
-                .onDisappear() {
-                    showTravelOptions = false
                 }
             
             }
-        
-        
         .navigationBarBackButtonHidden()
         .preferredColorScheme(.dark)
         }
-    }
-
-
+}
 
 #Preview {
-    HouseExterior()
+    EducationExterior()
 }
