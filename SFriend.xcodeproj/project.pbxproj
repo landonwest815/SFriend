@@ -52,6 +52,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		915BEBC62B6475090084755F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91B9F8142B6043EB00CDFD26 /* ContentView.swift */,
+				91B9F8242B60599E00CDFD26 /* HouseExterior.swift */,
+				91B9F8222B60595D00CDFD26 /* HouseInterior.swift */,
+				915BEBBC2B6435000084755F /* EducationExterior.swift */,
+				915BEBBA2B642EF00084755F /* EducationInterior.swift */,
+				91B9F8262B61602500CDFD26 /* MenuOverlay.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		915BEBC72B64752C0084755F /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				91B9F8282B6169D000CDFD26 /* MenuSheet.swift */,
+				91B9F82A2B61C6EF00CDFD26 /* CalendarSheet.swift */,
+				915BEBBE2B6436900084755F /* BusSheet.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		915BEBC92B6475B00084755F /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				915BEBC42B6456770084755F /* SFElement.swift */,
+			);
+			path = "Custom Elements";
+			sourceTree = "<group>";
+		};
+		915BEBCA2B64761C0084755F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				91B9F8162B6043EB00CDFD26 /* Item.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		91B9F8062B6043EB00CDFD26 = {
 			isa = PBXGroup;
 			children = (
@@ -72,19 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				91B9F8122B6043EB00CDFD26 /* SFriendApp.swift */,
-				91B9F8142B6043EB00CDFD26 /* ContentView.swift */,
-				91B9F8162B6043EB00CDFD26 /* Item.swift */,
-				91B9F8182B6043ED00CDFD26 /* Assets.xcassets */,
+				915BEBCA2B64761C0084755F /* Data */,
+				915BEBC62B6475090084755F /* Views */,
+				915BEBC72B64752C0084755F /* Sheets */,
+				915BEBC92B6475B00084755F /* Custom Elements */,
 				91B9F81A2B6043ED00CDFD26 /* Preview Content */,
-				91B9F8222B60595D00CDFD26 /* HouseInterior.swift */,
-				91B9F8242B60599E00CDFD26 /* HouseExterior.swift */,
-				91B9F8262B61602500CDFD26 /* MenuOverlay.swift */,
-				91B9F8282B6169D000CDFD26 /* MenuSheet.swift */,
-				91B9F82A2B61C6EF00CDFD26 /* CalendarSheet.swift */,
-				915BEBBA2B642EF00084755F /* EducationInterior.swift */,
-				915BEBBC2B6435000084755F /* EducationExterior.swift */,
-				915BEBBE2B6436900084755F /* BusSheet.swift */,
-				915BEBC42B6456770084755F /* SFElement.swift */,
+				91B9F8182B6043ED00CDFD26 /* Assets.xcassets */,
 			);
 			path = SFriend;
 			sourceTree = "<group>";
