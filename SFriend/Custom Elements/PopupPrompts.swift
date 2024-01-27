@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct PopupPrompts: View {
-    
-    var imageName: String
-    var width: CGFloat
-    var height: CGFloat
+
+    var image: SFElement
     var promptText: String
     var promptImage1: SFElement?
     var promptImage2: SFElement?
@@ -20,29 +18,23 @@ struct PopupPrompts: View {
     @Binding var showOptions: Bool
     
     // Basic text prompt
-    init(imageName: String, width: CGFloat, height: CGFloat, promptText: String, showOptions: Binding<Bool>) {
-        self.imageName = imageName
-        self.width = width
-        self.height = height
+    init(image: SFElement, promptText: String, showOptions: Binding<Bool>) {
+        self.image = image
         self.promptText = promptText
         self._showOptions = showOptions
     }
     
     // 1 Image Button
-    init(imageName: String, width: CGFloat, height: CGFloat, promptText: String, promptImage1: SFElement, showOptions: Binding<Bool>) {
-        self.imageName = imageName
-        self.width = width
-        self.height = height
+    init(image: SFElement, promptText: String, promptImage1: SFElement, showOptions: Binding<Bool>) {
+        self.image = image
         self.promptText = promptText
         self.promptImage1 = promptImage1
         self._showOptions = showOptions
     }
     
     // 2 Image Buttons
-    init(imageName: String, width: CGFloat, height: CGFloat, promptText: String, promptImage1: SFElement, promptImage2: SFElement, showOptions: Binding<Bool>) {
-        self.imageName = imageName
-        self.width = width
-        self.height = height
+    init(image: SFElement, promptText: String, promptImage1: SFElement, promptImage2: SFElement, showOptions: Binding<Bool>) {
+        self.image = image
         self.promptText = promptText
         self.promptImage1 = promptImage1
         self.promptImage2 = promptImage2
@@ -50,10 +42,8 @@ struct PopupPrompts: View {
     }
     
     // 3 Image Buttons
-    init(imageName: String, width: CGFloat, height: CGFloat, promptText: String, promptImage1: SFElement, promptImage2: SFElement, promptImage3: SFElement, showOptions: Binding<Bool>) {
-        self.imageName = imageName
-        self.width = width
-        self.height = height
+    init(image: SFElement, promptText: String, promptImage1: SFElement, promptImage2: SFElement, promptImage3: SFElement, showOptions: Binding<Bool>) {
+        self.image = image
         self.promptText = promptText
         self.promptImage1 = promptImage1
         self.promptImage2 = promptImage2
@@ -73,6 +63,7 @@ struct PopupPrompts: View {
                     .font(.system(size: 18))
                     .fontWeight(.heavy)
                     .fontDesign(.rounded)
+                    .multilineTextAlignment(.center)
                     .padding(6)
                     .scaleEffect(showOptions ? 1 : 0.5)
                     .opacity(showOptions ? 1 : 0)
@@ -80,7 +71,7 @@ struct PopupPrompts: View {
                     .animation(.easeOut(duration: 0.25), value: showOptions)
                 Spacer()
             }
-            .frame(width: width * 2)
+            .frame(width: image.width * 3)
             .padding(10)
             
             // NavigationLink Images
@@ -117,7 +108,7 @@ struct PopupPrompts: View {
                         }
                     }
                 }
-                .frame(width: self.width + 100)
+                .frame(width: self.image.width + 100)
                 .foregroundStyle(.white)
                 .padding(10)
             }
@@ -125,10 +116,10 @@ struct PopupPrompts: View {
             // Promptable Image
             Button { showOptions.toggle() }
             label: {
-                SFElement(imageName: self.imageName, width: self.width, height: self.height)
+                image
             }
             .foregroundStyle(.white)
-            .frame(width: self.width + 50)
+            .frame(width: self.image.width + 50)
             .padding(.top, 10)
         }
 
@@ -137,5 +128,5 @@ struct PopupPrompts: View {
 
 #Preview {
     @State var bool = false
-    return PopupPrompts(imageName: "gear", width: 100, height: 100, promptText: "Where to?", promptImage1: SFElement(imageName: "house.fill", width: 50, height: 40), promptImage2: SFElement(imageName: "pencil", width: 50, height: 50), showOptions: $bool)
+    return PopupPrompts(image: SFElement(imageName: "gear", width: 100, height: 100), promptText: "Where to?", promptImage1: SFElement(imageName: "house.fill", width: 50, height: 40), promptImage2: SFElement(imageName: "pencil", width: 50, height: 50), showOptions: $bool)
 }

@@ -14,6 +14,9 @@ struct HouseInterior: View {
     @State private var bedMade = false
     @State private var windowOpen = false
     @State private var bedAlreadyMade = 0
+    
+    @State var pictureDialog = false
+    @State var timeDialog = false
 
     var body: some View {
         ZStack {
@@ -27,7 +30,7 @@ struct HouseInterior: View {
                             VStack(spacing: 25) {
                                 
                                 // Pictureframe
-                                SFElement(imageName: "photo.artframe", width: 75, height: 60).opacity(0.5)
+                                PopupPrompts(image: SFElement(imageName: "photo.artframe", width: 75, height: 60, opacity: 0.5), promptText: "Hang a picture?", promptImage1: SFElement(imageName: "x.circle.fill", width: 25, height: 25), promptImage2: SFElement(imageName: "checkmark.circle.fill", width: 25, height: 25), showOptions: $pictureDialog)
                                 
                                 // Interactable Bed
                                 let bed = SFElement(imageName: "bed.double", imageName2: "bed.double.fill", width: 150, height: 100, actionOption: .replaceImage)
@@ -58,7 +61,7 @@ struct HouseInterior: View {
                                     Spacer()
                                     Spacer()
                                     
-                                    SFElement(imageName: "clock.fill", width: 50, height: 50)
+                                    PopupPrompts(image: SFElement(imageName: "clock.fill", width: 50, height: 50), promptText: "The Time is \(getTime())", showOptions: $timeDialog)
                                     
                                     Spacer()
                                 }
@@ -85,10 +88,21 @@ struct HouseInterior: View {
                         value.scrollTo(1)
                     }
                 }
+                .onTapGesture {
+                    timeDialog = false
+                    pictureDialog = false
+                }
             }
         }
         .navigationBarBackButtonHidden()
         .preferredColorScheme(.dark)
+    }
+    
+    func getTime() -> String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: Date())
+        return dateString
     }
 }
 

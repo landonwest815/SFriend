@@ -20,7 +20,7 @@ struct HouseExterior: View {
                         HStack(alignment: .bottom, spacing: 30) {
                             Spacer()
                             
-                            PopupPrompts(imageName: "bus.fill", width: 100, height: 100, promptText: "Where to?", promptImage1: SFElement(imageName: "graduationcap.fill", width: 50, height: 50), promptImage2: SFElement(imageName: "suitcase.fill", width: 50, height: 50), showOptions: $showTravelOptions)
+                            PopupPrompts(image: SFElement(imageName: "bus.fill", width: 100, height: 100), promptText: "Where to?", promptImage1: SFElement(imageName: "graduationcap.fill", width: 50, height: 50), promptImage2: SFElement(imageName: "suitcase.fill", width: 50, height: 50), showOptions: $showTravelOptions)
                             
                             SFElement(imageName: "signpost.right.and.left.fill", width: 90, height: 70)
                                 .id(1)

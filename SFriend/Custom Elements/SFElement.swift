@@ -26,6 +26,8 @@ struct SFElement: View {
     let width: CGFloat
     let height: CGFloat
     
+    var opacity: CGFloat = 1.0
+    
     var isButton: Bool = false
     @State var toggle: Bool = false
     
@@ -40,6 +42,16 @@ struct SFElement: View {
         self.imageName2 = ""
         self.width = width
         self.height = height
+        self.sheet = nil
+    }
+    
+    // just the image with opacity settings
+    init(imageName: String, width: CGFloat, height: CGFloat, opacity: CGFloat) {
+        self.imageName = imageName
+        self.imageName2 = ""
+        self.width = width
+        self.height = height
+        self.opacity = opacity
         self.sheet = nil
     }
     
@@ -142,6 +154,7 @@ struct SFElement: View {
             }
             
         }
+        .opacity(opacity)
         .preferredColorScheme(.dark)
     }
     
