@@ -13,6 +13,8 @@
 		915BEBC52B6456770084755F /* SFElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBC42B6456770084755F /* SFElement.swift */; };
 		915BEBCC2B65BFAF0084755F /* PopupPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBCB2B65BFAF0084755F /* PopupPrompts.swift */; };
 		915BEBCE2B65D8840084755F /* SparklesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBCD2B65D8840084755F /* SparklesSheet.swift */; };
+		915BEBD02B6626070084755F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBCF2B6626070084755F /* UserData.swift */; };
+		915BEBD22B662B000084755F /* WelcomeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915BEBD12B662B000084755F /* WelcomeSheet.swift */; };
 		91B9F8132B6043EB00CDFD26 /* SFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8122B6043EB00CDFD26 /* SFriendApp.swift */; };
 		91B9F8152B6043EB00CDFD26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8142B6043EB00CDFD26 /* ContentView.swift */; };
 		91B9F8172B6043EB00CDFD26 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F8162B6043EB00CDFD26 /* Item.swift */; };
@@ -32,6 +34,8 @@
 		915BEBC42B6456770084755F /* SFElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFElement.swift; sourceTree = "<group>"; };
 		915BEBCB2B65BFAF0084755F /* PopupPrompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPrompts.swift; sourceTree = "<group>"; };
 		915BEBCD2B65D8840084755F /* SparklesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklesSheet.swift; sourceTree = "<group>"; };
+		915BEBCF2B6626070084755F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		915BEBD12B662B000084755F /* WelcomeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSheet.swift; sourceTree = "<group>"; };
 		91B9F80F2B6043EB00CDFD26 /* SFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B9F8122B6043EB00CDFD26 /* SFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFriendApp.swift; sourceTree = "<group>"; };
 		91B9F8142B6043EB00CDFD26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 				91B9F82A2B61C6EF00CDFD26 /* CalendarSheet.swift */,
 				915BEBBE2B6436900084755F /* BusSheet.swift */,
 				915BEBCD2B65D8840084755F /* SparklesSheet.swift */,
+				915BEBD12B662B000084755F /* WelcomeSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				91B9F8162B6043EB00CDFD26 /* Item.swift */,
+				915BEBCF2B6626070084755F /* UserData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -207,7 +213,9 @@
 			files = (
 				915BEBCE2B65D8840084755F /* SparklesSheet.swift in Sources */,
 				91B9F8292B6169D000CDFD26 /* MenuSheet.swift in Sources */,
+				915BEBD22B662B000084755F /* WelcomeSheet.swift in Sources */,
 				91B9F82B2B61C6EF00CDFD26 /* CalendarSheet.swift in Sources */,
+				915BEBD02B6626070084755F /* UserData.swift in Sources */,
 				91B9F8152B6043EB00CDFD26 /* ContentView.swift in Sources */,
 				915BEBCC2B65BFAF0084755F /* PopupPrompts.swift in Sources */,
 				91B9F8272B61602500CDFD26 /* MenuOverlay.swift in Sources */,

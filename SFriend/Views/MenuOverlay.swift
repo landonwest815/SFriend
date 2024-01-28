@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MenuOverlay: View {
+    
+    @Environment(\.modelContext) var context
+    @Query var userDataArray: [UserData]
     
     @State private var showingSheet = false
 
@@ -30,7 +34,7 @@ struct MenuOverlay: View {
                     SFElement(imageName: "text.book.closed.fill", width: 25, height: 30, sheet: AnyView(SparklesSheet()))
                     Spacer()
                     SFElement(imageName: "sparkles", width: 30, height: 30, sheet: AnyView(SparklesSheet()))
-                    Text("8")
+                    Text(String(userDataArray.first?.numOfSparkles() ?? -1))
                         .font(.system(size: 18))
                         .fontWeight(.heavy)
                         .fontDesign(.rounded)

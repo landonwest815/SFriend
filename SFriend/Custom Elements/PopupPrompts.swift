@@ -85,7 +85,7 @@ struct PopupPrompts: View {
                     .transition(.opacity)
                     .animation(.easeOut(duration: 0.25), value: showOptions)
             }
-            .frame(width: image.width * 2.5)
+            .frame(width: image.width * 3)
             .padding(10)
             
             // NavigationLink Images
