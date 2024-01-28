@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum PopupType {
+    case travel
+    case purchase
+}
+
 struct PopupPrompts: View {
 
     var image: SFElement
@@ -14,6 +19,8 @@ struct PopupPrompts: View {
     var promptImage1: SFElement?
     var promptImage2: SFElement?
     var promptImage3: SFElement?
+    
+    var price: Int?
     
     @Binding var showOptions: Bool
     
@@ -51,6 +58,15 @@ struct PopupPrompts: View {
         self._showOptions = showOptions
     }
     
+    // Purchase
+    init(image: SFElement, promptText: String, price: Int, showOptions: Binding<Bool>) {
+        self.image = image
+        self.promptText = promptText
+        self.promptImage1 = SFElement(imageName: "sparkles", width: 25, height: 25)
+        self.price = price
+        self._showOptions = showOptions
+    }
+    
     var body: some View {
         
         // Encapsulates everything
@@ -75,7 +91,7 @@ struct PopupPrompts: View {
             .padding(10)
             
             // NavigationLink Images
-            if (promptImage1 != nil) {
+            if (promptImage1 != nil && price == nil) {
                 HStack(spacing:35) {
                     NavigationLink(destination: EducationExterior())
                     {
@@ -112,6 +128,29 @@ struct PopupPrompts: View {
                 .foregroundStyle(.white)
                 .padding(10)
             }
+            else if (price != nil) {
+                Button { }
+                label: {
+                    HStack {
+                        promptImage1
+                            .scaleEffect(showOptions ? 1 : 0.5)
+                            .opacity(showOptions ? 1 : 0)
+                            .transition(.opacity)
+                            .animation(.easeOut(duration: 0.25), value: showOptions)
+                        Text(String(price!))
+                            .font(.system(size: 18))
+                            .fontWeight(.heavy)
+                            .fontDesign(.rounded)
+                            .multilineTextAlignment(.center)
+                            .padding(6)
+                            .scaleEffect(showOptions ? 1 : 0.5)
+                            .opacity(showOptions ? 1 : 0)
+                            .transition(.opacity)
+                            .animation(.easeOut(duration: 0.25), value: showOptions)
+                    }
+                }
+                .foregroundStyle(.white)
+            }
             
             // Promptable Image
             Button { showOptions.toggle() }
@@ -128,5 +167,5 @@ struct PopupPrompts: View {
 
 #Preview {
     @State var bool = false
-    return PopupPrompts(image: SFElement(imageName: "gear", width: 100, height: 100), promptText: "Where to?", promptImage1: SFElement(imageName: "house.fill", width: 50, height: 40), promptImage2: SFElement(imageName: "pencil", width: 50, height: 50), showOptions: $bool)
+    return PopupPrompts(image: SFElement(imageName: "gear", width: 100, height: 100), promptText: "Where to?", price: 10, showOptions: $bool)
 }

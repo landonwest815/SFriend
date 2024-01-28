@@ -30,7 +30,7 @@ struct HouseInterior: View {
                             VStack(spacing: 25) {
                                 
                                 // Pictureframe
-                                PopupPrompts(image: SFElement(imageName: "photo.artframe", width: 75, height: 60, opacity: 0.5), promptText: "Hang a picture?", promptImage1: SFElement(imageName: "x.circle.fill", width: 25, height: 25), promptImage2: SFElement(imageName: "checkmark.circle.fill", width: 25, height: 25), showOptions: $pictureDialog)
+                                PopupPrompts(image: SFElement(imageName: "photo.artframe", width: 75, height: 60, opacity: 0.5), promptText: "Hang a picture?", price: 10, showOptions: $pictureDialog)
                                 
                                 // Interactable Bed
                                 let bed = SFElement(imageName: "bed.double", imageName2: "bed.double.fill", width: 150, height: 100, actionOption: .replaceImage)
