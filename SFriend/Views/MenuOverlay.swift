@@ -18,7 +18,7 @@ struct MenuOverlay: View {
                 HStack {
                     ZStack {
                         SFElement(imageName: "figure.wave", width: 35, height: 70, sheet: AnyView(MenuSheet()))
-                        SFElement(imageName: "4.circle.fill", width: 20, height: 20)
+                        SFElement(imageName: "3.circle.fill", width: 20, height: 20)
                             .padding(.leading, 50)
                             .padding(.bottom, 75)
                     }
@@ -30,7 +30,7 @@ struct MenuOverlay: View {
                     SFElement(imageName: "text.book.closed.fill", width: 25, height: 30, sheet: AnyView(SparklesSheet()))
                     Spacer()
                     SFElement(imageName: "sparkles", width: 30, height: 30, sheet: AnyView(SparklesSheet()))
-                    Text("17")
+                    Text("8")
                         .font(.system(size: 18))
                         .fontWeight(.heavy)
                         .fontDesign(.rounded)

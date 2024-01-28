@@ -17,6 +17,7 @@ struct HouseInterior: View {
     
     @State var pictureDialog = false
     @State var timeDialog = false
+    @State var macbookDialog = false
 
     var body: some View {
         ZStack {
@@ -68,11 +69,19 @@ struct HouseInterior: View {
                                 .frame(width: 150)
                                 Spacer()
                                 
-                                HStack(alignment: .bottom, spacing:0)
+                                ZStack()
                                 {
-                                    SFElement(imageName: "lamp.desk.fill", width: 50, height: 60)
+                                    VStack {
+                                        Spacer()
+                                        HStack {
+                                            SFElement(imageName: "lamp.desk.fill", width: 50, height: 60)
+                                            Spacer()
+                                        }
+                                        .frame(width: 125)
+                                    }
                                     
-                                    SFElement(imageName: "macbook", width: 70, height: 40)
+                                    PopupPrompts(image: SFElement(imageName: "macbook", width: 70, height: 40, opacity: 0.5), promptText: "Get a Macbook?", price: 15, showOptions: $macbookDialog)
+                                        .padding(.leading, 50)
                                         .symbolRenderingMode(.monochrome)
                                 }
                                 .frame(width: 150)
@@ -91,6 +100,7 @@ struct HouseInterior: View {
                 .onTapGesture {
                     timeDialog = false
                     pictureDialog = false
+                    macbookDialog = false
                 }
             }
         }
