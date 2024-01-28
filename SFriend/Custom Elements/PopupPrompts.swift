@@ -71,7 +71,7 @@ struct PopupPrompts: View {
                     .animation(.easeOut(duration: 0.25), value: showOptions)
                 Spacer()
             }
-            .frame(width: image.width * 3)
+            .frame(width: image.width * 2.5)
             .padding(10)
             
             // NavigationLink Images
@@ -108,7 +108,7 @@ struct PopupPrompts: View {
                         }
                     }
                 }
-                .frame(width: self.image.width + 100)
+                .frame(width: self.image.width + 50)
                 .foregroundStyle(.white)
                 .padding(10)
             }

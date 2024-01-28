@@ -14,10 +14,15 @@ struct MenuOverlay: View {
     var body: some View {
         
         VStack {
-            HStack(spacing:30) {
+            HStack(spacing:10) {
                 VStack {
                     
-                    SFElement(imageName: "figure.wave", width: 37.5, height: 75, sheet: AnyView(MenuSheet()))
+                    ZStack {
+                        SFElement(imageName: "figure.wave", width: 35, height: 70, sheet: AnyView(MenuSheet()))
+                        SFElement(imageName: "4.circle.fill", width: 20, height: 20)
+                            .padding(.leading, 50)
+                            .padding(.bottom, 75)
+                    }
                     
                     Text("Landon")
                         .font(.system(size: 18))
@@ -27,7 +32,7 @@ struct MenuOverlay: View {
             }
             Spacer()
         }
-        .padding(30)
+        .padding(20)
         .preferredColorScheme(.dark)
     }
 }
