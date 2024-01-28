@@ -26,6 +26,24 @@ struct HouseInterior: View {
                     VStack {
                         HStack(alignment: .bottom, spacing: 50) {
                             
+                            Spacer()
+                            
+                            VStack {
+                                Spacer()
+                                SFElement(imageName: "tv", width: 125, height: 100)
+                                    .symbolRenderingMode(.monochrome)
+                                SFElement(imageName: "table.furniture.fill", width: 125, height: 30)
+                            }
+                            
+                            SFElement(imageName: "sofa.fill", width: 150, height: 75)
+                            
+                            VStack(spacing:3){
+                                Spacer()
+                                SFElement(imageName: "lamp.floor.fill", width: 35, height: 50)
+                                SFElement(imageName: "table.furniture.fill", width: 75, height: 50)
+                            }
+                            .padding(.trailing, 50)
+
                             SFElement(imageName: "door.left.hand.open", width: 100, height: 150, actionOption: .dismiss)
                             
                             VStack(spacing: 25) {
@@ -62,7 +80,7 @@ struct HouseInterior: View {
                                     Spacer()
                                     Spacer()
                                     
-                                    PopupPrompts(image: SFElement(imageName: "clock.fill", width: 50, height: 50), promptText: "The Time is \(getTime())", showOptions: $timeDialog)
+                                    PopupPrompts(image: SFElement(imageName: "clock.fill", width: 40, height: 40), promptText: "The Time is \(getTime())", showOptions: $timeDialog)
                                     
                                     Spacer()
                                 }
@@ -88,9 +106,15 @@ struct HouseInterior: View {
                                 
                                 SFElement(imageName: "table.furniture.fill", width: 150, height: 75)
                             }
+
+                            SFElement(imageName: "stairs", width: 100, height: 100)
+                                .fontWeight(.bold)
+                                .padding(.leading, 25)
                         }
                         
-                        SFElement(imageName: "square.fill", width: 1100, height: 25)
+                        SFElement(imageName: "square.fill", width: 1600, height: 25)
+                            .padding(.trailing, 75)
+                        
                     }
                     .frame(height: 400)
                     .onAppear() {

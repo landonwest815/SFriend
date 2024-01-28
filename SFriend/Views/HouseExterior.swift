@@ -15,27 +15,28 @@ struct HouseExterior: View {
         NavigationView {
             ScrollViewReader { value in
                 ScrollView(.horizontal, showsIndicators: false) {
-                    VStack(spacing:3) {
+                    VStack(spacing:-5) {
                         Spacer()
                         HStack(alignment: .bottom, spacing: 30) {
                             Spacer()
                             
                             PopupPrompts(image: SFElement(imageName: "bus.fill", width: 100, height: 100), promptText: "Where to?", promptImage1: SFElement(imageName: "graduationcap.fill", width: 50, height: 50), promptImage2: SFElement(imageName: "suitcase.fill", width: 50, height: 50), showOptions: $showTravelOptions)
+                                .padding(.bottom, 10)
                             
-                            SFElement(imageName: "signpost.right.and.left.fill", width: 90, height: 70)
+                            SFElement(imageName: "camera.macro", width: 40, height: 40)
                                 .id(1)
+                                .padding(.bottom, 10)
                             
-                            VStack(spacing: 150) {
-                                
+                            VStack {
                                 NavigationLink(destination: HouseInterior())
-                                    {
-                                        SFElement(imageName: "house.fill", width: 175, height: 150)
-                                    }
-                                    .foregroundStyle(.white)
-                                
+                                {
+                                    SFElement(imageName: "house.lodge.fill", width: 250, height: 150)
+                                }
+                                .foregroundStyle(.white)
                             }
                             
                             SFElement(imageName: "tree.fill", width: 175, height: 150)
+                                .padding(.bottom, 10)
                             
                             Spacer()
                         }

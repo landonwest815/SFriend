@@ -74,18 +74,16 @@ struct PopupPrompts: View {
             
             // Prompt Text
             HStack {
-                Spacer()
                 Text(promptText)
+                    .multilineTextAlignment(.center)
                     .font(.system(size: 18))
                     .fontWeight(.heavy)
                     .fontDesign(.rounded)
-                    .multilineTextAlignment(.center)
-                    .padding(6)
+                    .padding(3)
                     .scaleEffect(showOptions ? 1 : 0.5)
                     .opacity(showOptions ? 1 : 0)
                     .transition(.opacity)
                     .animation(.easeOut(duration: 0.25), value: showOptions)
-                Spacer()
             }
             .frame(width: image.width * 2.5)
             .padding(10)
