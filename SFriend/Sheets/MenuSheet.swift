@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MenuSheet: View {
+    
+    @Environment(\.modelContext) var context
+    @Query var SFTasks: [SFTask]
 
     var body: some View {
         
@@ -23,80 +27,46 @@ struct MenuSheet: View {
                 }
                 .padding(.bottom, 30)
                 
-                HStack {
-                    Text("Make your bed")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                        .padding(3)
-                        .multilineTextAlignment(.leading)
+                ForEach(SFTasks, id: \.id) { task in
                     
-                    Spacer()
-                    
-                    SFElement(imageName: "sparkles", width: 25, height: 25)
-                        .padding(.leading, 15)
-                    Text("1")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                }
-                
-                HStack {
-                    Text("Let some fresh air inside")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                        .padding(3)
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-                    
-                    SFElement(imageName: "sparkles", width: 25, height: 25)
-                        .padding(.leading, 15)
-                    Text("1")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                    
-                }
-                
-                HStack {
-                    Text("Check in with the calendar")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                        .padding(3)
-                        .strikethrough()
-                        .foregroundStyle(.gray)
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-                    
-                    SFElement(imageName: "sparkles", width: 25, height: 25, opacity: 0.5)
-                        .padding(.leading, 15)
-                    Text("3")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                        .opacity(0.5)
-                }
-                
-                HStack {
-                    Text("Write down the best part of your day")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
-                        .padding(3)
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-                    
-                    SFElement(imageName: "sparkles", width: 25, height: 25)
-                        .padding(.leading, 15)
-                    Text("3")
-                        .font(.system(size: 20))
-                        .fontWeight(.heavy)
-                        .fontDesign(.rounded)
+                    HStack {
+                        if task.isCompleted {
+                            Text(task.taskDescription)
+                                .font(.system(size: 20))
+                                .fontWeight(.heavy)
+                                .fontDesign(.rounded)
+                                .padding(3)
+                                .multilineTextAlignment(.leading)
+                                .strikethrough()
+                                .foregroundStyle(.gray)
+                        } else {
+                            Text(task.taskDescription)
+                                .font(.system(size: 20))
+                                .fontWeight(.heavy)
+                                .fontDesign(.rounded)
+                                .padding(3)
+                                .multilineTextAlignment(.leading)
+                        }
+                        
+                        Spacer()
+                        
+                        SFElement(imageName: "sparkles", width: 25, height: 25)
+                            .padding(.leading, 15)
+                        
+                        if task.isCompleted {
+                            Text(String(task.taskReward))
+                                .font(.system(size: 20))
+                                .fontWeight(.heavy)
+                                .fontDesign(.rounded)
+                                .strikethrough()
+                                .foregroundStyle(.gray)
+                        } else {
+                            Text(String(task.taskReward))
+                                .font(.system(size: 20))
+                                .fontWeight(.heavy)
+                                .fontDesign(.rounded)
+                        }
+                    }
                 }
             }
             .listRowBackground(Color.black)
@@ -108,5 +78,13 @@ struct MenuSheet: View {
 }
 
 #Preview {
-    MenuSheet()
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: UserData.self, SFTask.self, configurations: config)
+    let userData = UserData()
+    container.mainContext.insert(userData)
+    let task = SFTask(taskDescription: "do something", taskReward: 0)
+    container.mainContext.insert(task)
+
+    return MenuSheet()
+           .modelContainer(container)
 }

@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HouseInterior: View {
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
+    @Query var userData: [UserData]
+    @Query var SFTasks: [SFTask]
+    
     @State private var showingSheet = false
     @State private var bedMade = false
     @State private var windowOpen = false
@@ -54,7 +59,9 @@ struct HouseInterior: View {
                                 // Interactable Bed
                                 let bed = SFElement(imageName: "bed.double", imageName2: "bed.double.fill", width: 150, height: 100, actionOption: .replaceImage)
                                     .id(1)
+                                    
                                 bed
+                                    
 
                             }
                             

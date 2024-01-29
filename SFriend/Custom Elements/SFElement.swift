@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum ButtonActionOption {
     case noAction
@@ -19,6 +20,9 @@ enum ButtonActionOption {
 struct SFElement: View {
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
+    @Query var userData: [UserData]
+    @Query var SFTasks: [SFTask]
     
     let imageName: String
     let imageName2: String
@@ -100,6 +104,7 @@ struct SFElement: View {
                 if (actionOption == .switchImage || actionOption == .replaceImage) {
                     Button(action: {
                         performAction(for: actionOption)
+                        CompleteTask()
                     }) {
                         Image(systemName: toggle ? imageName2 : imageName)
                             .resizable()
@@ -182,6 +187,30 @@ struct SFElement: View {
             
         case .sheet:
             toggle.toggle()
+        }
+    }
+    
+    private func CompleteTask() {
+        print("tap")
+        if let task = SFTasks.first(where: { $0.taskDescription == "Make your bed" }) {
+            
+            print("hmm")
+            if !task.isCompleted {
+                print("ooh")
+                userData.first?.incrementSparkles(amount: task.taskReward)
+                task.isCompleted = true
+            }
+        }
+        
+        print("tap")
+        if let task = SFTasks.first(where: { $0.taskDescription == "Let some fresh air in" }) {
+            
+            print("hmm")
+            if !task.isCompleted {
+                print("ooh")
+                userData.first?.incrementSparkles(amount: task.taskReward)
+                task.isCompleted = true
+            }
         }
     }
 }

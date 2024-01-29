@@ -13,6 +13,7 @@ struct SFriendApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             UserData.self,
+            SFTask.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
