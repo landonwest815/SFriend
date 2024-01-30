@@ -90,7 +90,7 @@ struct EducationInterior: View {
                                 }
                                 
                                 // Exit Door
-                                SFElement(imageName: "door.left.hand.open", width: 100, height: 150, actionOption: .dismiss)
+                                SFClickable(image: SFElement(imageName: "door.left.hand.open", width: 100, height: 150), actionOption: .dismiss)
                                 
                                 SFElement(imageName: "trash.fill", width: 55, height: 70)
                                     .id(1)

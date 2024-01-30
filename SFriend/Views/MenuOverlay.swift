@@ -25,7 +25,7 @@ struct MenuOverlay: View {
             ZStack(alignment: .top) {
                 HStack {
                     ZStack {
-                        SFElement(imageName: (completedTasks.count == 0) ? "figure.stand" : "figure.wave", width: (completedTasks.count == 0) ? 30 : 35, height: 70, sheet: AnyView(MenuSheet()))
+                        SFClickable(image: SFElement(imageName: (completedTasks.count == 0) ? "figure.stand" : "figure.wave", width: (completedTasks.count == 0) ? 30 : 35, height: 70), sheet: AnyView(MenuSheet()))
                         
                         if (completedTasks.count != 0) {
                             SFElement(imageName: "\(completedTasks.count).circle.fill", width: 20, height: 20)
@@ -36,11 +36,11 @@ struct MenuOverlay: View {
                 }
                 
                 HStack {
-                    SFElement(imageName: "gear", width: 30, height: 30, sheet: AnyView(SparklesSheet()))
+                    SFClickable(image: SFElement(imageName: "gear", width: 30, height: 30), sheet: AnyView(SparklesSheet()))
                         .padding(.trailing, 10)
-                    SFElement(imageName: "text.book.closed.fill", width: 25, height: 30, sheet: AnyView(SparklesSheet()))
+                    SFClickable(image: SFElement(imageName: "text.book.closed.fill", width: 25, height: 30), sheet: AnyView(SparklesSheet()))
                     Spacer()
-                    SFElement(imageName: "sparkles", width: 30, height: 30, sheet: AnyView(SparklesSheet()))
+                    SFClickable(image: SFElement(imageName: "sparkles", width: 30, height: 30), sheet: AnyView(SparklesSheet()))
                     Text(String(userDataArray.first?.numOfSparkles() ?? -1))
                         .font(.system(size: 18))
                         .fontWeight(.heavy)

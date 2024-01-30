@@ -49,7 +49,7 @@ struct HouseInterior: View {
                             }
                             .padding(.trailing, 50)
 
-                            SFElement(imageName: "door.left.hand.open", width: 100, height: 150, actionOption: .dismiss)
+                            SFClickable(image: SFElement(imageName: "door.left.hand.open", width: 100, height: 150), actionOption: .dismiss)
                             
                             VStack(spacing: 25) {
                                 
@@ -57,7 +57,7 @@ struct HouseInterior: View {
                                 PopupPrompts(image: SFElement(imageName: "photo.artframe", width: 75, height: 60, opacity: 0.5), promptText: "Hang a picture?", price: 10, showOptions: $pictureDialog)
                                 
                                 // Interactable Bed
-                                let bed = SFElement(imageName: "bed.double", imageName2: "bed.double.fill", width: 150, height: 100, actionOption: .replaceImage)
+                                let bed = SFClickable(image: SFElement(imageName: "bed.double", imageName2: "bed.double.fill", width: 150, height: 100), actionOption: .replaceImage)
                                     .id(1)
                                     
                                 bed
@@ -71,10 +71,10 @@ struct HouseInterior: View {
                                 HStack(spacing:30) {
                                     
                                     // Window
-                                    SFElement(imageName: "window.vertical.open", imageName2: "window.vertical.closed", width: 110, height: 100, actionOption: .switchImage)
+                                    SFClickable(image: SFElement(imageName: "window.vertical.open", imageName2: "window.vertical.closed", width: 110, height: 100),  actionOption: .toggleImage)
                                         
                                     // Calendar
-                                    SFElement(imageName: "calendar", width: 50, height: 50, sheet: AnyView(CalendarSheet()))
+                                    SFClickable(image: SFElement(imageName: "calendar", width: 50, height: 50), sheet: AnyView(CalendarSheet()))
                                     
                                 }
                                 Spacer()
