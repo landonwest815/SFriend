@@ -53,7 +53,6 @@ struct SFClickable: View {
                 if (actionOption == .toggleImage || actionOption == .replaceImage) {
                     Button(action: {
                         performAction(for: actionOption)
-                        //CompleteTask()
                     }) {
                         Image(systemName: toggle ? image.imageName2 : image.imageName)
                             .resizable()
@@ -120,6 +119,7 @@ struct SFClickable: View {
             case .sheet:
                 toggle.toggle()
             }
+        CompleteTask()
     }
     
     private func CompleteTask() {
@@ -134,16 +134,16 @@ struct SFClickable: View {
             }
         }
         
-        print("tap")
-        if let task = SFTasks.first(where: { $0.taskDescription == "Let some fresh air in" }) {
-            
-            print("hmm")
-            if !task.isCompleted {
-                print("ooh")
-                userData.first?.incrementSparkles(amount: task.taskReward)
-                task.isCompleted = true
-            }
-        }
+//        print("tap")
+//        if let task = SFTasks.first(where: { $0.taskDescription == "Let some fresh air in" }) {
+//            
+//            print("hmm")
+//            if !task.isCompleted {
+//                print("ooh")
+//                userData.first?.incrementSparkles(amount: task.taskReward)
+//                task.isCompleted = true
+//            }
+//        }
     }
 }
 

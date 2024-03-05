@@ -34,6 +34,7 @@ struct ContentView: View {
             GetSFTasks()
 //            do {
 //                try context.delete(model: UserData.self)
+//                try context.delete(model: SFTask.self)
 //            } catch {
 //                print("Failed to clear all Country and City data.")
 //            }
